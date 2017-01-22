@@ -16,7 +16,7 @@ This is a collection of samples that demonstrate different image and video proce
 * Video Analysis
   * [Object Tracking](http://docs.opencv.org/master/dc/d6b/group__video__track.html)
 
-### [Additional Resources]
+### Additional Resources
 * [Sentdex's OpenCV Youtube Tutorial Series for Image and Video Analysis](https://www.youtube.com/watch?v=Z78zbnLlPUA&list=PLQVvvaa0QuDdttJXlLtAJxJetJcqmqlQq)
 * [IntoRobotic's Guide to Object Detection and Tracking](https://www.intorobotics.com/how-to-detect-and-track-object-with-opencv/)
 
