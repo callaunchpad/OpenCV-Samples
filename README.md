@@ -2,7 +2,7 @@
 
 This is a collection of samples that demonstrate different image and video processing algorithms provided by OpenCV.
 
-### Tutorials
+### [Tutorials](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)
 * Image Processing
   * [Smoothing Images](http://docs.opencv.org/master/d4/d13/tutorial_py_filtering.html)
 * Video Analysis
@@ -10,9 +10,15 @@ This is a collection of samples that demonstrate different image and video proce
   * [Meanshift](http://docs.opencv.org/master/db/df8/tutorial_py_meanshift.html)
   * [Optical Flow](http://docs.opencv.org/master/d7/d8b/tutorial_py_lucas_kanade.html)
 
-### References
+### [References](http://docs.opencv.org/master/modules.html)
+* Image Processing
+  * [Motion Analysis and Object Tracking](http://docs.opencv.org/master/d7/df3/group__imgproc__motion.html)
 * Video Analysis
   * [Object Tracking](http://docs.opencv.org/master/dc/d6b/group__video__track.html)
+
+### [Additional Resources]
+* [Sentdex's OpenCV Youtube Tutorial Series for Image and Video Analysis](https://www.youtube.com/watch?v=Z78zbnLlPUA&list=PLQVvvaa0QuDdttJXlLtAJxJetJcqmqlQq)
+* [IntoRobotic's Guide to Object Detection and Tracking](https://www.intorobotics.com/how-to-detect-and-track-object-with-opencv/)
 
 ### Samples
 * Motion Tracking

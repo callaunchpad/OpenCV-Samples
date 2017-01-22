@@ -6,7 +6,11 @@ fgbg = cv2.createBackgroundSubtractorMOG2()
 
 while True:
     _, frame = camera.read()
+
+    # Apply background subtraction
     fgmask = fgbg.apply(frame)
+
+    # Apply median blur
     fgmask = cv2.medianBlur(fgmask, 5)
 
     cv2.imshow('Camera', frame)
