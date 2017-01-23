@@ -13,8 +13,12 @@ while True:
     # Apply median blur
     fgmask = cv2.medianBlur(fgmask, 5)
 
+    # Filter frame
+    filtered = cv2.bitwise_and(frame, frame, mask = fgmask)
+
     cv2.imshow('Camera', frame)
     cv2.imshow('Motion Detection', fgmask)
+    cv2.imshow('Filtered', filtered)
 
     key = cv2.waitKey(10) & 0xff
     if key == 27:

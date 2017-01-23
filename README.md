@@ -5,6 +5,7 @@ This is a collection of samples that demonstrate different image and video proce
 ### [Tutorials](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)
 * Image Processing
   * [Smoothing Images](http://docs.opencv.org/master/d4/d13/tutorial_py_filtering.html)
+  * [Contours in OpenCV](http://docs.opencv.org/master/d3/d05/tutorial_py_table_of_contents_contours.html)
 * Video Analysis
   * [Background Subtraction](http://docs.opencv.org/master/db/d5c/tutorial_py_bg_subtraction.html)
   * [Meanshift](http://docs.opencv.org/master/db/df8/tutorial_py_meanshift.html)
@@ -13,6 +14,7 @@ This is a collection of samples that demonstrate different image and video proce
 ### [References](http://docs.opencv.org/master/modules.html)
 * Image Processing
   * [Motion Analysis and Object Tracking](http://docs.opencv.org/master/d7/df3/group__imgproc__motion.html)
+  * [Image Thresholding](http://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html)
 * Video Analysis
   * [Object Tracking](http://docs.opencv.org/master/dc/d6b/group__video__track.html)
 
@@ -26,3 +28,8 @@ This is a collection of samples that demonstrate different image and video proce
       * Median Blur
   * Background Subtraction
       * MOG2
+* Color Filtering
+  * Image Thresholding 
+* Contours
+  * Contours in OpenCV
+  * Image Thresholding
