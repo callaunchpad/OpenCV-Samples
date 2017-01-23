@@ -3,6 +3,9 @@
 This is a collection of samples that demonstrate different image and video processing algorithms provided by OpenCV.
 
 ### [Tutorials](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)
+* Basic
+  * [Basic Image Processing](http://docs.opencv.org/master/dc/d2e/tutorial_py_image_display.html)
+  * [Draw Functions](http://docs.opencv.org/master/dc/da5/tutorial_py_drawing_functions.html)
 * Image Processing
   * [Smoothing Images](http://docs.opencv.org/master/d4/d13/tutorial_py_filtering.html)
   * [Contours in OpenCV](http://docs.opencv.org/master/d3/d05/tutorial_py_table_of_contents_contours.html)
@@ -23,6 +26,10 @@ This is a collection of samples that demonstrate different image and video proce
 * [IntoRobotic's Guide to Object Detection and Tracking](https://www.intorobotics.com/how-to-detect-and-track-object-with-opencv/)
 
 ### Samples
+* Calibration
+  * Basic Image Processing
+  * Drawing Functions
+
 * Motion Tracking
   * Smoothing Images
       * Median Blur
