@@ -8,7 +8,7 @@ while True:
 
     # Retrieve grayscale frame with threshold
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    _, threshold = cv2.threshold(gray_frame, 127, 255, 0)
+    _, threshold = cv2.threshold(gray_frame, 127, 255, cv2.THRESH_TOZERO_INV)
     threshold = cv2.medianBlur(threshold, 5)
 
     # Find contours
