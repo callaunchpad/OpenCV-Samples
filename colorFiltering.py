@@ -7,12 +7,15 @@ cv2.namedWindow('Thresholds')
 # Create trackbars
 def update(value):
     pass
-cv2.createTrackbar('Min Hue', 'Thresholds', 0, 255, update)
+cv2.createTrackbar('Min Hue', 'Thresholds', 0, 180, update)
 cv2.createTrackbar('Min Saturation', 'Thresholds', 0, 255, update)
 cv2.createTrackbar('Min Value', 'Thresholds', 0, 255, update)
-cv2.createTrackbar('Max Hue', 'Thresholds', 255, 255, update)
+cv2.createTrackbar('Max Hue', 'Thresholds', 180, 180, update)
 cv2.createTrackbar('Max Saturation', 'Thresholds', 255, 255, update)
 cv2.createTrackbar('Max Value', 'Thresholds', 255, 255, update)
+
+min_color = np.zeros((128, 128, 3), np.uint8)
+max_color = np.zeros((128, 128, 3), np.uint8)
 
 while True:
     _, frame = camera.read()
@@ -33,12 +36,22 @@ while True:
     min_threshold = np.array([min_hue, min_sat, min_value])
     max_threshold = np.array([max_hue, max_sat, max_value])
 
+    # Create min and max color previews
+    min_color[:] = min_threshold
+    max_color[:] = max_threshold
+    min_color = cv2.cvtColor(min_color, cv2.COLOR_HSV2BGR)
+    max_color = cv2.cvtColor(max_color, cv2.COLOR_HSV2BGR)
+
+    # Display min and max color previews
+    cv2.imshow('Min Color', min_color)
+    cv2.imshow('Max Color', max_color)
+
     # Filter based on HSV threshold values
     mask = cv2.inRange(hsv, min_threshold, max_threshold)
+    mask = cv2.medianBlur(mask, 5)
     filtered = cv2.bitwise_and(frame, frame, mask = mask)
 
     cv2.imshow('Camera', frame)
-    cv2.imshow('Mask', mask)
     cv2.imshow('Filtered', filtered)
 
     key = cv2.waitKey(10) & 0xff
