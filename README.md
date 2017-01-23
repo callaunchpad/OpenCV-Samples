@@ -34,3 +34,5 @@ This is a collection of samples that demonstrate different image and video proce
 * Thresholding
   * Image Thresholding
     * Adaptive Gaussian Threshold
+* Lucas-Kanade Optical Flow
+  * Optical Flow
