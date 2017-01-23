@@ -28,14 +28,21 @@ This is a collection of samples that demonstrate different image and video proce
       * Median Blur
   * Background Subtraction
       * MOG2
+
 * Color Filtering
   * Image Thresholding 
   * Contours in OpenCV
+
 * Simple Thresholding
   * Image Thresholding
     * Simple Thresholding
+
 * Adaptive Thresholding
   * Image Thresholding
     * Adaptive Gaussian Threshold
+
 * Lucas-Kanade Optical Flow
+  * Optical Flow
+
+* Dense Optical Flow
   * Optical Flow
