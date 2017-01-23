@@ -49,12 +49,25 @@ while True:
     # Filter based on HSV threshold values
     mask = cv2.inRange(hsv, min_threshold, max_threshold)
     mask = cv2.medianBlur(mask, 5)
-    filtered = cv2.bitwise_and(frame, frame, mask = mask)
+
+    # Find contours
+    filtered, contours, hierarchy = cv2.findContours(mask.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Approximate outline of contours
+    epsilon = lambda contour: 0.001 * cv2.arcLength(contour, True)
+    poly_contours = [cv2.approxPolyDP(contour, epsilon(contour), True) for contour in contours]
+
+    # Draw largest contour
+    if len(poly_contours) > 0:
+        largestContour = max(poly_contours, key = lambda contour: cv2.contourArea(contour))
+        filtered = frame.copy()
+        cv2.drawContours(filtered, [largestContour], -1, (0, 255, 0), 3)
 
     cv2.imshow('Camera', frame)
+    cv2.imshow('Mask', mask)
     cv2.imshow('Filtered', filtered)
 
-    key = cv2.waitKey(10) & 0xff
+    key = cv2.waitKey(30) & 0xff
     if key == 27:
         break
 

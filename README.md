@@ -30,6 +30,7 @@ This is a collection of samples that demonstrate different image and video proce
       * MOG2
 * Color Filtering
   * Image Thresholding 
-* Contours
   * Contours in OpenCV
+* Thresholding
   * Image Thresholding
+    * Adaptive Gaussian Threshold

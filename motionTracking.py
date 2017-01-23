@@ -20,7 +20,7 @@ while True:
     cv2.imshow('Motion Detection', fgmask)
     cv2.imshow('Filtered', filtered)
 
-    key = cv2.waitKey(10) & 0xff
+    key = cv2.waitKey(30) & 0xff
     if key == 27:
         break
 
