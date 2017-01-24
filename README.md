@@ -31,6 +31,8 @@ This is a collection of samples that demonstrate different image and video proce
 * Calibration
   * Basic Image Processing
   * Drawing Functions
+  * Smoothing Images
+  * Contours in OpenCV
 * Image Filtering
   * Smoothing Images
 * Canny Edge Detection

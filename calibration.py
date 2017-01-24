@@ -78,8 +78,6 @@ while True:
     displayColor = cv2.cvtColor(displayColor, cv2.COLOR_HSV2BGR)
     cv2.imshow('Max Color', displayColor)
 
-    cv2.imshow('Camera', frame)
-
     # Update color thresholds
     for i in range(3):
         minColor[i] = min(minColor[i], color[i])
@@ -92,6 +90,25 @@ while True:
     cv2.setTrackbarPos('Max Hue', 'Thresholds', maxColor[0])
     cv2.setTrackbarPos('Max Saturation', 'Thresholds', maxColor[1])
     cv2.setTrackbarPos('Max Value', 'Thresholds', maxColor[2])
+
+    # Blur and filter frame based on thresholds
+    hsv_frame = cv2.medianBlur(hsv_frame, 7)
+    filtered = cv2.inRange(hsv_frame, minColor, maxColor)
+
+    # Find contours
+    filtered, contours, hierarchy = cv2.findContours(filtered, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Approximate outline of contours
+    epsilon = lambda contour: 0.001 * cv2.arcLength(contour, True)
+    poly_contours = [cv2.approxPolyDP(contour, epsilon(contour), True) for contour in contours]
+
+    # Draw largest contour
+    if len(poly_contours) > 0:
+        largestContour = max(poly_contours, key = lambda contour: cv2.contourArea(contour))
+        cv2.drawContours(frame, [largestContour], -1, (0, 255, 0), 3)
+
+    # Display frame
+    cv2.imshow('Camera', frame)
 
     key = cv2.waitKey(30) & 0xff
 
