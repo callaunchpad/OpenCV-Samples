@@ -5,6 +5,7 @@ camera = cv2.VideoCapture(0)
 
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     edges = cv2.Canny(frame, 100, 200)
 

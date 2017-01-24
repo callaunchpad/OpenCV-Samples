@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0)
 
 # Parameters for ShiTomasi Corner Detection
 feature_params = dict(maxCorners = 100, qualityLevel = 0.3, minDistance = 7, blockSize = 7)
@@ -13,7 +13,8 @@ lk_params = dict(winSize = (15, 15), maxLevel = 2, criteria = (cv2.TERM_CRITERIA
 color = np.random.randint(0, 255, (100, 3))
 
 # Retrieve first frame and identify corners
-_, prev_frame = cap.read()
+_, prev_frame = camera.read()
+prev_frame = cv2.flip(prev_frame, 1)
 prev_gray_frame = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
 p0 = cv2.goodFeaturesToTrack(prev_gray_frame, mask = None, **feature_params)
 
@@ -21,7 +22,8 @@ p0 = cv2.goodFeaturesToTrack(prev_gray_frame, mask = None, **feature_params)
 mask = np.zeros_like(prev_frame)
 
 while True:
-    _, frame = cap.read()
+    _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Calculate optical flow
@@ -51,4 +53,4 @@ while True:
 
 
 cv2.destroyAllWindows()
-cap.release()
+camera.release()

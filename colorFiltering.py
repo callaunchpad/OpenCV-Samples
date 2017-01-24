@@ -19,6 +19,7 @@ max_color = np.zeros((128, 128, 3), np.uint8)
 
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Update trackbar values

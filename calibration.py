@@ -12,6 +12,7 @@ def drawText(frame, text):
 # Initialization
 while True:
     _,frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     # Calculate midpoint
     height, width, channels  = frame.shape
@@ -29,6 +30,7 @@ while True:
 
 # Initialize range
 _, frame = camera.read()
+frame = cv2.flip(frame, 1)
 hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 height, width, channels  = hsv_frame.shape
 midPoint = (width // 2, height // 2)
@@ -48,6 +50,7 @@ cv2.createTrackbar('Max Value', 'Thresholds', 255, 255, update)
 # Calibration
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     # Calculate midpoint
     height, width, channels  = frame.shape

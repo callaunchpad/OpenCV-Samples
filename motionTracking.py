@@ -6,6 +6,7 @@ fgbg = cv2.createBackgroundSubtractorMOG2()
 
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     # Apply background subtraction
     fgmask = fgbg.apply(frame)

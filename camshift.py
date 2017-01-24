@@ -10,6 +10,7 @@ def drawText(frame, text):
 
 # Calculate midpoint
 _, frame = camera.read()
+frame = cv2.flip(frame, 1)
 height, width, channels = frame.shape
 # (column, row)
 midPoint = (width // 2, height // 2)
@@ -23,6 +24,7 @@ trackingWindow = topLeft[0], topLeft[1], sideLength, sideLength
 # Initialization
 while True:
     _,frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     # Draw rectangle
     cv2.rectangle(frame, topLeft, bottomRight, (0, 255, 0), 3)
@@ -47,6 +49,7 @@ termCrit = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 1)
 
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 

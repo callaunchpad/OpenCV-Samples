@@ -5,6 +5,7 @@ camera = cv2.VideoCapture(0)
 
 while True:
     _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
 
     # Retrieve grayscale frame with threshold
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
