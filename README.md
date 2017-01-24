@@ -31,13 +31,13 @@ This is a collection of samples that demonstrate different image and video proce
 * Calibration
   * Basic Image Processing
   * Drawing Functions
+* Image Filtering
+  * Smoothing Images
 * Canny Edge Detection
   * Canny Edge Detection
 * Motion Tracking
   * Smoothing Images
-      * Median Blur
   * Background Subtraction
-      * MOG2
 * Color Filtering
   * Image Thresholding 
   * Contours in OpenCV
