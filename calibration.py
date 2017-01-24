@@ -59,6 +59,8 @@ while True:
     # Draw circle
     cv2.circle(frame, midPoint, 8, (0, 255, 0), 3)
 
+    drawText(frame, 'Press spacebar to stop calibration')
+
     # Get HSV color at midpoint
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     color = hsv_frame[midPoint[1]][midPoint[0]]
@@ -92,7 +94,39 @@ while True:
     cv2.setTrackbarPos('Max Value', 'Thresholds', maxColor[2])
 
     # Blur and filter frame based on thresholds
-    hsv_frame = cv2.medianBlur(hsv_frame, 15)
+    hsv_frame = cv2.medianBlur(hsv_frame, 21)
+    filtered = cv2.inRange(hsv_frame, minColor, maxColor)
+
+    # Find contours
+    filtered, contours, hierarchy = cv2.findContours(filtered, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Approximate outline of contours
+    epsilon = lambda contour: 0.001 * cv2.arcLength(contour, True)
+    poly_contours = [cv2.approxPolyDP(contour, epsilon(contour), True) for contour in contours]
+
+    # Draw largest contour
+    if len(poly_contours) > 0:
+        largestContour = max(poly_contours, key = lambda contour: cv2.contourArea(contour))
+        cv2.drawContours(frame, [largestContour], -1, (0, 255, 0), 3)
+
+    # Display frame
+    cv2.imshow('Camera', frame)
+
+    key = cv2.waitKey(30) & 0xff
+
+    # Exit on escape
+    if key == 27 or key == 32:
+        break
+
+while True:
+    _, frame = camera.read()
+    frame = cv2.flip(frame, 1)
+
+    # Get HSV frame
+    hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # Blur and filter frame based on thresholds
+    hsv_frame = cv2.medianBlur(hsv_frame, 21)
     filtered = cv2.inRange(hsv_frame, minColor, maxColor)
 
     # Find contours
@@ -115,6 +149,7 @@ while True:
     # Exit on escape
     if key == 27:
         break
+
 
 camera.release()
 cv2.destroyAllWindows()
