@@ -51,3 +51,5 @@ This is a collection of samples that demonstrate different image and video proce
   * Optical Flow
 * Dense Optical Flow
   * Optical Flow
+* Camshift
+  * Meanshift
