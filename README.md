@@ -41,12 +41,8 @@ This is a collection of samples that demonstrate different image and video proce
 * Color Filtering
   * Image Thresholding 
   * Contours in OpenCV
-* Simple Thresholding
+* Thresholding
   * Image Thresholding
-    * Simple Thresholding
-* Adaptive Thresholding
-  * Image Thresholding
-    * Adaptive Gaussian Threshold
 * Lucas-Kanade Optical Flow
   * Optical Flow
 * Dense Optical Flow
