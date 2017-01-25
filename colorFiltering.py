@@ -49,7 +49,7 @@ while True:
 
     # Filter based on HSV threshold values
     mask = cv2.inRange(hsv, min_threshold, max_threshold)
-    mask = cv2.medianBlur(mask, 7)
+    mask = cv2.medianBlur(mask, 5)
 
     # Find contours
     filtered, contours, hierarchy = cv2.findContours(mask.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
