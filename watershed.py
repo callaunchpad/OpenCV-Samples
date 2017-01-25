@@ -8,6 +8,7 @@ while True:
     frame = cv2.flip(frame, 1)
 
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray_frame = cv2.medianBlur(gray_frame, 7)
     _, filtered = cv2.threshold(gray_frame, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
     # Remove noise
