@@ -94,7 +94,7 @@ while True:
     cv2.setTrackbarPos('Max Value', 'Thresholds', maxColor[2])
 
     # Blur and filter frame based on thresholds
-    hsv_frame = cv2.medianBlur(hsv_frame, 21)
+    hsv_frame = cv2.medianBlur(hsv_frame, 15)
     filtered = cv2.inRange(hsv_frame, minColor, maxColor)
 
     # Find contours
@@ -126,7 +126,7 @@ while True:
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Blur and filter frame based on thresholds
-    hsv_frame = cv2.medianBlur(hsv_frame, 21)
+    hsv_frame = cv2.medianBlur(hsv_frame, 15)
     filtered = cv2.inRange(hsv_frame, minColor, maxColor)
 
     # Find contours
