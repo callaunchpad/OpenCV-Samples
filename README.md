@@ -33,8 +33,10 @@ This is a collection of samples that demonstrate different image and video proce
   * Drawing Functions
   * Smoothing Images
   * Contours in OpenCV
-* Image Filtering
+* Image Blurring
   * Smoothing Images
+* Image Filtering
+  * Image Thresholding
 * Canny Edge Detection
   * Canny Edge Detection
 * Motion Tracking
@@ -43,8 +45,6 @@ This is a collection of samples that demonstrate different image and video proce
 * Color Filtering
   * Image Thresholding 
   * Contours in OpenCV
-* Thresholding
-  * Image Thresholding
 * Lucas-Kanade Optical Flow
   * Optical Flow
 * Dense Optical Flow
