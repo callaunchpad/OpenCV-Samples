@@ -11,6 +11,10 @@ This is a collection of samples that demonstrate different image and video proce
   * [Contours in OpenCV](http://docs.opencv.org/master/d3/d05/tutorial_py_table_of_contents_contours.html)
   * [Canny Edge Detection](http://docs.opencv.org/trunk/da/d22/tutorial_py_canny.html)
   * [Image Segmentation](http://docs.opencv.org/master/d3/db4/tutorial_py_watershed.html)
+* Feature Detection
+  * [Feature Matching + Homography to Find Objects](http://docs.opencv.org/3.2.0/d1/de0/tutorial_py_feature_homography.html)
+* Object Detection
+  * [Face Detection with Haar Cascades](http://docs.opencv.org/master/d7/d8b/tutorial_py_face_detection.html)
 * Video Analysis
   * [Background Subtraction](http://docs.opencv.org/master/db/d5c/tutorial_py_bg_subtraction.html)
   * [Meanshift](http://docs.opencv.org/master/db/df8/tutorial_py_meanshift.html)
@@ -53,3 +57,5 @@ This is a collection of samples that demonstrate different image and video proce
   * Meanshift
 * Watershed
   * Image Segmentation
+* Haar Cascades
+  * Face Detection with Haar Cascades

@@ -3,8 +3,8 @@ import cv2
 camera = cv2.VideoCapture(0)
 
 # Fullscreen
-cv2.namedWindow('Camera', cv2.WND_PROP_FULLSCREEN)
-cv2.setWindowProperty('Camera', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+# cv2.namedWindow('Camera', cv2.WND_PROP_FULLSCREEN)
+# cv2.setWindowProperty('Camera', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
 cascades = ['./cascades/haarcascade_frontalface_alt.xml']
 
@@ -29,7 +29,7 @@ while True:
 
     faces = []
     for classifier in classifiers:
-        for rectangle in classifier.detectMultiScale(gray_frame, scaleFactor = 1.1, minNeighbors = 2):
+        for rectangle in classifier.detectMultiScale(gray_frame, scaleFactor = 1.1, minNeighbors = 1):
             faces.append(rectangle)
 
     for x, y, w, h in faces:
