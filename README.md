@@ -59,3 +59,5 @@ This is a collection of samples that demonstrate different image and video proce
   * Image Segmentation
 * Haar Cascades
   * Face Detection with Haar Cascades
+* Feature Matching
+  * Feature Matching + Homography

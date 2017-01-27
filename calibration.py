@@ -7,7 +7,7 @@ cv2.namedWindow('Thresholds')
 # Helper Functions
 def drawText(frame, text):
     font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(frame, text, (10, 24), font, 0.6, (0, 255, 0), 2, cv2.LINE_AA)
+    cv2.putText(frame, text, (10, 24), font, 0.6, (0, 255, 0), 2)
 
 # Initialization
 while True:
