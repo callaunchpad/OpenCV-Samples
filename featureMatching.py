@@ -3,7 +3,7 @@ import numpy as np
 
 camera = cv2.VideoCapture(0)
 
-query = cv2.imread('images/book.jpg', 0)
+query = cv2.imread('images/sign.jpg', 0)
 sift = cv2.xfeatures2d.SIFT_create()
 bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)
 
@@ -30,7 +30,7 @@ while True:
     print(len(good))
     # frame = cv2.drawMatches(query, kp1, frame, kp2, good, None)
 
-    MIN_MATCH_COUNT = 30
+    MIN_MATCH_COUNT = 16
     if len(good) > MIN_MATCH_COUNT:
         print('Good match found!')
         src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)
